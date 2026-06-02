@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Navigate, type RouteObject } from 'react-router-dom';
 import { AppShell } from '@/components/layout/AppShell';
 import { AuthGuard } from '@/components/layout/AuthGuard';
@@ -5,6 +6,11 @@ import { RoleGuard } from '@/components/layout/RoleGuard';
 import { Placeholder } from '@/components/shared/Placeholder';
 import { LoginPage } from '@/features/auth/pages/LoginPage';
 import { rutaInicialDeRol, useSessionStore } from '@/stores/sessionStore';
+
+// Code splitting: lazy load Hito 3 (Reservas) para reducir bundle principal
+const NuevaReservaPage = lazy(() => import('@/features/reservas/pages/NuevaReservaPage').then(m => ({ default: m.NuevaReservaPage })))
+const ListaReservasPage = lazy(() => import('@/features/reservas/pages/ListaReservasPage').then(m => ({ default: m.ListaReservasPage })))
+const DetalleReservaPage = lazy(() => import('@/features/reservas/pages/DetalleReservaPage').then(m => ({ default: m.DetalleReservaPage })))
 
 function RedirectAlInicio() {
   const { estaAutenticado, rolActivo } = useSessionStore.getState();
@@ -42,17 +48,14 @@ export const routes: RouteObject[] = [
         ),
       },
 
-      // Reservas
+      // Reservas (lazy-loaded para code splitting)
       {
         path: 'reservas',
         element: (
           <RoleGuard allow={['recepcionista', 'supervisor']}>
-            <Placeholder
-              titulo="Reservas"
-              descripcion="Lista, filtros y acciones sobre reservas."
-              hito="Hito 3"
-              rfReferencia="RF-01"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <ListaReservasPage />
+            </Suspense>
           </RoleGuard>
         ),
       },
@@ -60,12 +63,9 @@ export const routes: RouteObject[] = [
         path: 'reservas/nueva',
         element: (
           <RoleGuard allow={['recepcionista', 'supervisor']}>
-            <Placeholder
-              titulo="Nueva reserva"
-              descripcion="Wizard de 3 pasos: fechas/habitación, huésped, pago."
-              hito="Hito 3"
-              rfReferencia="RF-01"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <NuevaReservaPage />
+            </Suspense>
           </RoleGuard>
         ),
       },
@@ -73,12 +73,9 @@ export const routes: RouteObject[] = [
         path: 'reservas/:id',
         element: (
           <RoleGuard allow={['recepcionista', 'supervisor']}>
-            <Placeholder
-              titulo="Detalle de reserva"
-              descripcion="Datos, pagos, bitácora y acciones contextuales por estado."
-              hito="Hito 3"
-              rfReferencia="RF-01"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <DetalleReservaPage />
+            </Suspense>
           </RoleGuard>
         ),
       },
