@@ -18,8 +18,11 @@ export function ColaCheckInPage() {
   const navigate = useNavigate()
 
   const reservas = useReservasStore((s) => s.reservas)
-  const huespedesMap = useHuespedesStore((s) =>
-    Object.fromEntries(s.huespedes.map((h) => [h.id, h]))
+  const huespedes = useHuespedesStore((s) => s.huespedes)
+
+  const huespedesMap = useMemo(
+    () => Object.fromEntries(huespedes.map((h) => [h.id, h])),
+    [huespedes]
   )
 
   const { atrasadas, hoy } = useMemo(() => {
