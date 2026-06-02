@@ -14,7 +14,7 @@ import { useReservasStore } from '@/stores/reservasStore'
 import { useHuespedesStore } from '@/stores/huespedesStore'
 import { useHabitacionesStore } from '@/stores/habitacionesStore'
 import { useTrazabilidadStore } from '@/stores/trazabilidadStore'
-import { cancelarReservaYLiberarHabitacion } from '@/services/reservasCoordinationService'
+import { cancelarReservaYLiberarHabitacion, realizarCheckInAtomico, realizarCheckOutAtomico } from '@/services/reservasCoordinationService'
 
 import { ETIQUETAS_TIPO_HABITACION } from '@/domain/enums'
 import { formatCLP, obtenerIniciales } from '@/lib/formato'
@@ -32,7 +32,6 @@ export function DetalleReservaPage() {
   const [motivoCancelacion, setMotivoCancelacion] = useState('')
 
   const reserva = useReservasStore((s) => (id ? s.porId(id) : undefined))
-  const cambiarEstado = useReservasStore((s) => s.cambiarEstado)
 
   const huesped = useHuespedesStore((s) => (reserva ? s.porId(reserva.huespedPrincipalId) : undefined))
   const habitacion = useHabitacionesStore((s) => (reserva ? s.porId(reserva.habitacionId) : undefined))
@@ -89,7 +88,7 @@ export function DetalleReservaPage() {
   }
 
   const handleCheckIn = () => {
-    const resultado = cambiarEstado(reserva.id, 'check_in_realizado')
+    const resultado = realizarCheckInAtomico(reserva.id, habitacion!.id)
     if (resultado.ok) {
       toast.success('Check-in realizado')
     } else {
@@ -98,7 +97,7 @@ export function DetalleReservaPage() {
   }
 
   const handleCheckOut = () => {
-    const resultado = cambiarEstado(reserva.id, 'check_out_realizado')
+    const resultado = realizarCheckOutAtomico(reserva.id, habitacion!.id)
     if (resultado.ok) {
       toast.success('Check-out realizado')
     } else {

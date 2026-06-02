@@ -1,0 +1,136 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CardHabitacion > renders with correct information 1`] = `
+<div>
+  <div
+    class="rounded-lg border border-border bg-card text-card-foreground shadow-sm cursor-pointer transition-all p-4 hover:shadow-md hover:border-primary/50"
+  >
+    <div
+      class="flex items-start justify-between mb-2"
+    >
+      <div>
+        <div
+          class="text-lg font-semibold"
+        >
+          Habitación 
+          101
+        </div>
+        <div
+          class="text-sm text-muted-foreground"
+        >
+          Piso 
+          1
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex gap-2 mb-3"
+    >
+      <div
+        class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+      >
+        Doble
+      </div>
+      <div
+        class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+      >
+        2
+         huéspedes
+      </div>
+    </div>
+    <div
+      class="text-xs text-muted-foreground mb-3"
+    >
+      WiFi · Aire acondicionado · Minibar
+    </div>
+    <div
+      class="pt-2 border-t border-border"
+    >
+      <div
+        class="font-semibold text-primary"
+      >
+        $150.000
+         por noche
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CardHabitacion > shows selected state with ring styling 1`] = `
+<div>
+  <div
+    class="rounded-lg border border-border text-card-foreground shadow-sm cursor-pointer transition-all p-4 ring-2 ring-primary bg-accent"
+  >
+    <div
+      class="flex items-start justify-between mb-2"
+    >
+      <div>
+        <div
+          class="text-lg font-semibold"
+        >
+          Habitación 
+          101
+        </div>
+        <div
+          class="text-sm text-muted-foreground"
+        >
+          Piso 
+          1
+        </div>
+      </div>
+      <div
+        class="bg-primary text-primary-foreground p-1 rounded-full"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-check w-4 h-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20 6 9 17l-5-5"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="flex gap-2 mb-3"
+    >
+      <div
+        class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+      >
+        Doble
+      </div>
+      <div
+        class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+      >
+        2
+         huéspedes
+      </div>
+    </div>
+    <div
+      class="text-xs text-muted-foreground mb-3"
+    >
+      WiFi · Aire acondicionado · Minibar
+    </div>
+    <div
+      class="pt-2 border-t border-border"
+    >
+      <div
+        class="font-semibold text-primary"
+      >
+        $150.000
+         por noche
+      </div>
+    </div>
+  </div>
+</div>
+`;

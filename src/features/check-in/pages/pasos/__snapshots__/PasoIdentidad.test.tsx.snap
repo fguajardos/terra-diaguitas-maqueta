@@ -1,0 +1,92 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PasoIdentidad > renders snapshot 1`] = `
+<div>
+  <div
+    class="space-y-6"
+  >
+    <div
+      class="rounded-lg border border-border bg-card text-card-foreground shadow-sm p-6"
+    >
+      <h2
+        class="text-lg font-semibold mb-4"
+      >
+        Verificación de Identidad
+      </h2>
+      <div
+        class="space-y-4"
+      >
+        <div
+          class="flex items-center gap-4 p-4 bg-accent/50 rounded-lg"
+        >
+          <span
+            class="relative flex shrink-0 overflow-hidden rounded-full w-12 h-12"
+          >
+            <span
+              class="flex h-full w-full items-center justify-center rounded-full bg-muted text-sm font-medium"
+            >
+              JP
+            </span>
+          </span>
+          <div>
+            <div
+              class="font-semibold"
+            >
+              Juan
+               
+              Pérez
+            </div>
+            <div
+              class="text-sm text-muted-foreground"
+            >
+              juan@example.com
+            </div>
+          </div>
+        </div>
+        <div
+          class="space-y-2"
+        >
+          <p
+            class="text-sm font-medium"
+          >
+            Documento de identidad:
+          </p>
+          <div
+            class="flex items-center gap-2"
+          >
+            <div
+              class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+            >
+              RUT: 
+              12.345.678-9
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t pt-4"
+        >
+          <div
+            class="flex items-start gap-3"
+          >
+            <button
+              aria-checked="false"
+              class="peer h-4 w-4 shrink-0 border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+              data-state="unchecked"
+              id="identidad-verificada"
+              role="checkbox"
+              type="button"
+              value="on"
+            />
+            <label
+              class="text-sm cursor-pointer"
+              for="identidad-verificada"
+            >
+              He verificado la identidad del huésped con documento físico
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

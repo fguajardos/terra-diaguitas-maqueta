@@ -7,10 +7,14 @@ import { Placeholder } from '@/components/shared/Placeholder';
 import { LoginPage } from '@/features/auth/pages/LoginPage';
 import { rutaInicialDeRol, useSessionStore } from '@/stores/sessionStore';
 
-// Code splitting: lazy load Hito 3 (Reservas) para reducir bundle principal
+// Code splitting: lazy load Hito 3 (Reservas) y Hito 4 (Check-in/Check-out) para reducir bundle principal
 const NuevaReservaPage = lazy(() => import('@/features/reservas/pages/NuevaReservaPage').then(m => ({ default: m.NuevaReservaPage })))
 const ListaReservasPage = lazy(() => import('@/features/reservas/pages/ListaReservasPage').then(m => ({ default: m.ListaReservasPage })))
 const DetalleReservaPage = lazy(() => import('@/features/reservas/pages/DetalleReservaPage').then(m => ({ default: m.DetalleReservaPage })))
+const ColaCheckInPage = lazy(() => import('@/features/check-in/pages/ColaCheckInPage').then(m => ({ default: m.ColaCheckInPage })))
+const WizardCheckInPage = lazy(() => import('@/features/check-in/pages/WizardCheckInPage').then(m => ({ default: m.WizardCheckInPage })))
+const ColaCheckOutPage = lazy(() => import('@/features/check-out/pages/ColaCheckOutPage').then(m => ({ default: m.ColaCheckOutPage })))
+const WizardCheckOutPage = lazy(() => import('@/features/check-out/pages/WizardCheckOutPage').then(m => ({ default: m.WizardCheckOutPage })))
 
 function RedirectAlInicio() {
   const { estaAutenticado, rolActivo } = useSessionStore.getState();
@@ -100,12 +104,9 @@ export const routes: RouteObject[] = [
         path: 'check-in',
         element: (
           <RoleGuard allow={['recepcionista', 'supervisor']}>
-            <Placeholder
-              titulo="Cola de check-in"
-              descripcion="Reservas con fecha de ingreso hoy."
-              hito="Hito 4"
-              rfReferencia="RF-04"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <ColaCheckInPage />
+            </Suspense>
           </RoleGuard>
         ),
       },
@@ -113,12 +114,9 @@ export const routes: RouteObject[] = [
         path: 'check-in/:reservaId',
         element: (
           <RoleGuard allow={['recepcionista', 'supervisor']}>
-            <Placeholder
-              titulo="Wizard de check-in"
-              descripcion="Validación de identidad, firma digital y confirmación."
-              hito="Hito 4"
-              rfReferencia="RF-04"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <WizardCheckInPage />
+            </Suspense>
           </RoleGuard>
         ),
       },
@@ -128,12 +126,9 @@ export const routes: RouteObject[] = [
         path: 'check-out',
         element: (
           <RoleGuard allow={['recepcionista', 'supervisor']}>
-            <Placeholder
-              titulo="Cola de check-out"
-              descripcion="Reservas con fecha de salida hoy."
-              hito="Hito 4"
-              rfReferencia="RF-05"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <ColaCheckOutPage />
+            </Suspense>
           </RoleGuard>
         ),
       },
@@ -141,12 +136,9 @@ export const routes: RouteObject[] = [
         path: 'check-out/:reservaId',
         element: (
           <RoleGuard allow={['recepcionista', 'supervisor']}>
-            <Placeholder
-              titulo="Wizard de check-out"
-              descripcion="Revisión de consumos, pago final y encuesta NPS."
-              hito="Hito 4"
-              rfReferencia="RF-05"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <WizardCheckOutPage />
+            </Suspense>
           </RoleGuard>
         ),
       },

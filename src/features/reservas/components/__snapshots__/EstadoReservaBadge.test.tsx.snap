@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EstadoReservaBadge > accepts custom variant prop 1`] = `
+<div>
+  <div
+    class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+  >
+    Pendiente
+  </div>
+</div>
+`;
+
+exports[`EstadoReservaBadge > renders cancelada estado 1`] = `
+<div>
+  <div
+    class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80"
+  >
+    Cancelada
+  </div>
+</div>
+`;
+
+exports[`EstadoReservaBadge > renders check_in_realizado estado 1`] = `
+<div>
+  <div
+    class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80"
+  >
+    Check-in realizado
+  </div>
+</div>
+`;
+
+exports[`EstadoReservaBadge > renders confirmada estado 1`] = `
+<div>
+  <div
+    class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80"
+  >
+    Confirmada
+  </div>
+</div>
+`;
+
+exports[`EstadoReservaBadge > renders pagada estado 1`] = `
+<div>
+  <div
+    class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80"
+  >
+    Pagada
+  </div>
+</div>
+`;
+
+exports[`EstadoReservaBadge > renders pendiente estado 1`] = `
+<div>
+  <div
+    class="inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+  >
+    Pendiente
+  </div>
+</div>
+`;

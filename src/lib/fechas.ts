@@ -59,3 +59,8 @@ export function esPosteriorA(isoA: string, isoB: string): boolean {
 export function mismoDia(isoA: string, isoB: string): boolean {
   return isSameDay(parseISO(isoA), parseISO(isoB));
 }
+
+// Aliases para claridad en contextos específicos
+export const calcularNoches = noches;
+export const formatDate = fechaCorta;
+export const isBeforeDay = esAnteriorA;

@@ -1,0 +1,136 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TimelineBitacora > renders empty state when no eventos 1`] = `
+<div>
+  <div
+    class="text-center py-8"
+  >
+    <p
+      class="text-muted-foreground"
+    >
+      No hay eventos registrados aún.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`TimelineBitacora > renders eventos in timeline 1`] = `
+<div>
+  <div
+    class="space-y-4"
+  >
+    <div
+      class="flex gap-4"
+    >
+      <div
+        class="flex flex-col items-center"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-muted flex items-center justify-center"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-circle-check w-5 h-5 text-green-600"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+            />
+            <path
+              d="m9 12 2 2 4-4"
+            />
+          </svg>
+        </div>
+        <div
+          class="w-1 h-8 bg-border mt-2"
+        />
+      </div>
+      <div
+        class="flex-1 pb-4"
+      >
+        <div
+          class="font-semibold text-sm"
+        >
+          creacion_reserva
+        </div>
+        <div
+          class="text-xs text-muted-foreground mt-1"
+        >
+          Por 
+          recepcionista
+           • 
+          02 jun 2026 a las 06:00
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex gap-4"
+    >
+      <div
+        class="flex flex-col items-center"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-muted flex items-center justify-center"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-circle-check w-5 h-5 text-green-600"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+            />
+            <path
+              d="m9 12 2 2 4-4"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="flex-1 pb-4"
+      >
+        <div
+          class="font-semibold text-sm"
+        >
+          cambio_estado_reserva
+        </div>
+        <div
+          class="text-xs text-muted-foreground mt-1"
+        >
+          Por 
+          recepcionista
+           • 
+          02 jun 2026 a las 06:05
+        </div>
+        <div
+          class="text-xs text-muted-foreground mt-2 p-2 bg-muted rounded"
+        >
+          pendiente
+           → 
+          confirmada
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
