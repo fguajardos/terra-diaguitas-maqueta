@@ -7,7 +7,8 @@ import { Placeholder } from '@/components/shared/Placeholder';
 import { LoginPage } from '@/features/auth/pages/LoginPage';
 import { rutaInicialDeRol, useSessionStore } from '@/stores/sessionStore';
 
-// Code splitting: lazy load Hito 3 (Reservas) y Hito 4 (Check-in/Check-out) para reducir bundle principal
+// Code splitting: lazy load Hito 3 (Reservas), Hito 4 (Check-in/Check-out), y Hito 6 (Dashboard) para reducir bundle principal
+const DashboardPage = lazy(() => import('@/features/dashboard/pages/DashboardPage'))
 const NuevaReservaPage = lazy(() => import('@/features/reservas/pages/NuevaReservaPage').then(m => ({ default: m.NuevaReservaPage })))
 const ListaReservasPage = lazy(() => import('@/features/reservas/pages/ListaReservasPage').then(m => ({ default: m.ListaReservasPage })))
 const DetalleReservaPage = lazy(() => import('@/features/reservas/pages/DetalleReservaPage').then(m => ({ default: m.DetalleReservaPage })))
@@ -42,12 +43,9 @@ export const routes: RouteObject[] = [
         path: 'dashboard',
         element: (
           <RoleGuard allow={['supervisor']}>
-            <Placeholder
-              titulo="Dashboard operacional"
-              descripcion="KPIs en tiempo real, alertas y próximas llegadas."
-              hito="Hito 6"
-              rfReferencia="RF-07"
-            />
+            <Suspense fallback={<div className="flex items-center justify-center h-screen">Cargando...</div>}>
+              <DashboardPage />
+            </Suspense>
           </RoleGuard>
         ),
       },

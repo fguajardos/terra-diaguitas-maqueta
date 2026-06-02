@@ -59,6 +59,16 @@ const extranjeros: SemillaHuesped[] = [
   { nombre: 'Michael', apellido: 'Williams', pasaporte: 'US-90123456', nacionalidad: 'Estados Unidos', email: 'michael.williams@gmail.com', telefono: '+1 212 555 5678', ciudad: 'Nueva York', idiomaPreferido: 'en' },
   { nombre: 'Camille', apellido: 'Dubois', pasaporte: 'FR-01234567', nacionalidad: 'Francia', email: 'camille.dubois@gmail.com', telefono: '+33 1 23 45 67 89', ciudad: 'París', idiomaPreferido: 'en' },
   { nombre: 'Antoine', apellido: 'Laurent', pasaporte: 'FR-12345670', nacionalidad: 'Francia', email: 'antoine.laurent@gmail.com', telefono: '+33 4 56 78 90 12', ciudad: 'Lyon', idiomaPreferido: 'en' },
+  { nombre: 'Sofia', apellido: 'Russo', pasaporte: 'IT-23567891', nacionalidad: 'Italia', email: 'sofia.russo@gmail.com', telefono: '+39 6 1234 5678', ciudad: 'Roma', idiomaPreferido: 'en' },
+  { nombre: 'Marco', apellido: 'Rossi', pasaporte: 'IT-34678902', nacionalidad: 'Italia', email: 'marco.rossi@gmail.com', telefono: '+39 2 5678 9012', ciudad: 'Milán', idiomaPreferido: 'en' },
+  { nombre: 'Carolina', apellido: 'González', pasaporte: 'MX-45789013', nacionalidad: 'México', email: 'carolina.gonzalez@gmail.com', telefono: '+52 55 1234 5678', ciudad: 'México City', idiomaPreferido: 'es' },
+  { nombre: 'Diego', apellido: 'López', pasaporte: 'MX-56890124', nacionalidad: 'México', email: 'diego.lopez@gmail.com', telefono: '+52 33 5678 9012', ciudad: 'Guadalajara', idiomaPreferido: 'es' },
+  { nombre: 'Sophie', apellido: 'Martin', pasaporte: 'BE-67901235', nacionalidad: 'Bélgica', email: 'sophie.martin@gmail.com', telefono: '+32 2 123 4567', ciudad: 'Bruselas', idiomaPreferido: 'en' },
+  { nombre: 'Willem', apellido: 'de Vries', pasaporte: 'NL-78012346', nacionalidad: 'Países Bajos', email: 'willem.devries@gmail.com', telefono: '+31 20 123 4567', ciudad: 'Ámsterdam', idiomaPreferido: 'en' },
+  { nombre: 'Isabella', apellido: 'Costa', pasaporte: 'PT-89123457', nacionalidad: 'Portugal', email: 'isabella.costa@gmail.com', telefono: '+351 21 123 4567', ciudad: 'Lisboa', idiomaPreferido: 'en' },
+  { nombre: 'Nikolai', apellido: 'Petrov', pasaporte: 'RU-90234568', nacionalidad: 'Rusia', email: 'nikolai.petrov@gmail.com', telefono: '+7 495 123 4567', ciudad: 'Moscú', idiomaPreferido: 'en' },
+  { nombre: 'Yuki', apellido: 'Tanaka', pasaporte: 'JP-01345679', nacionalidad: 'Japón', email: 'yuki.tanaka@gmail.com', telefono: '+81 3 1234 5678', ciudad: 'Tokio', idiomaPreferido: 'en' },
+  { nombre: 'Wei', apellido: 'Wang', pasaporte: 'CN-12456780', nacionalidad: 'China', email: 'wei.wang@gmail.com', telefono: '+86 10 1234 5678', ciudad: 'Pekín', idiomaPreferido: 'en' },
 ];
 
 const preferenciasPool = ['cama king', 'almohada extra', 'piso alto', 'vista cordillera', 'desayuno temprano', 'late check-out'];

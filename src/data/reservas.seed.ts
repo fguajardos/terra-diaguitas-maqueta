@@ -46,12 +46,18 @@ interface Plantilla {
 }
 
 const plantillas: Plantilla[] = [
-  { estado: 'check_out_realizado', cantidad: 15, ingresoOffsetRange: [-30, -3], noches: [1, 4], pagoMonto: 'total' },
-  { estado: 'check_in_realizado', cantidad: 10, ingresoOffsetRange: [-2, 0], noches: [2, 5], pagoMonto: 'total' },
-  { estado: 'confirmada', cantidad: 20, ingresoOffsetRange: [3, 60], noches: [1, 6], pagoMonto: 'parcial' },
-  { estado: 'pendiente', cantidad: 8, ingresoOffsetRange: [1, 14], noches: [1, 3], pagoMonto: 'ninguno' },
-  { estado: 'cancelada', cantidad: 5, ingresoOffsetRange: [-60, -10], noches: [1, 3], pagoMonto: 'ninguno' },
-  { estado: 'no_show', cantidad: 2, ingresoOffsetRange: [-7, -5], noches: [1, 2], pagoMonto: 'parcial' },
+  // Históricas (pasadas)
+  { estado: 'check_out_realizado', cantidad: 80, ingresoOffsetRange: [-120, -3], noches: [1, 7], pagoMonto: 'total' },
+  { estado: 'no_show', cantidad: 12, ingresoOffsetRange: [-90, -10], noches: [1, 3], pagoMonto: 'parcial' },
+  { estado: 'cancelada', cantidad: 15, ingresoOffsetRange: [-60, -5], noches: [1, 4], pagoMonto: 'ninguno' },
+
+  // Presentes (hoy y cercanos)
+  { estado: 'check_in_realizado', cantidad: 18, ingresoOffsetRange: [-7, 0], noches: [2, 5], pagoMonto: 'total' },
+
+  // Futuras (próximas)
+  { estado: 'confirmada', cantidad: 45, ingresoOffsetRange: [1, 90], noches: [1, 8], pagoMonto: 'parcial' },
+  { estado: 'pagada', cantidad: 20, ingresoOffsetRange: [2, 60], noches: [1, 5], pagoMonto: 'total' },
+  { estado: 'pendiente', cantidad: 10, ingresoOffsetRange: [1, 30], noches: [1, 3], pagoMonto: 'ninguno' },
 ];
 
 let secuencial = 1;
