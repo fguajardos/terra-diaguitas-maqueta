@@ -12,6 +12,12 @@ const intentosFallidos = new Map<string, { cantidad: number; resetAt: number }>(
 export function validarCredenciales(email: string, password: string) {
   const usuario = usuariosSeed.find(u => u.email === email)
 
+  // Validar que email y password existan y sean válidos
+  if (!email || !password || typeof password !== 'string') {
+    registrarIntentoFallido(email || '')
+    return null
+  }
+
   // Simulado: aceptamos cualquier contraseña >= 6 caracteres
   // En producción: validar contra hash en backend
   if (!usuario || password.length < 6) {
