@@ -4,7 +4,7 @@ import { AppShell } from '@/components/layout/AppShell';
 import { AuthGuard } from '@/components/layout/AuthGuard';
 import { RoleGuard } from '@/components/layout/RoleGuard';
 import { Placeholder } from '@/components/shared/Placeholder';
-import { LoginPage } from '@/features/auth/pages/LoginPage';
+import { LoginPageV2 } from '@/features/auth/pages/LoginPageV2';
 import { rutaInicialDeRol, useSessionStore } from '@/stores/sessionStore';
 
 // Code splitting: lazy load Hito 3 (Reservas), Hito 4 (Check-in/Check-out), y Hito 6 (Dashboard) para reducir bundle principal
@@ -25,7 +25,7 @@ function RedirectAlInicio() {
 
 export const routes: RouteObject[] = [
   // Pantalla de login (sin AppShell)
-  { path: '/login', element: <LoginPage /> },
+  { path: '/login', element: <LoginPageV2 /> },
 
   // Todo lo demás vive dentro del AppShell y exige autenticación
   {
